@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalha Pedidos</title>
+  </head>
+  <body>
+    <header class="container">
+      <form id="form-add">
+        <label for="data">
+          Escolha uma data para detalhar os pedidos que ocorreram nela:
+        </label>
+        <input
+          type="date"
+          id="data"
+          name="data"
+          placeholder=""
+          min="1996-06-04"
+          max="1997-08-27"
+          required
+        />
+      </form>
+      <button type="submit" id="detalhar">Detalhar</button>
+    </header>
+
+    <h3>Pedidos</h3>
+    <pre id="postgres" style="white-space: pre-wrap"></pre>
+
+    <h3>Detalhes</h3>
+    <pre id="csv" style="white-space: pre-wrap"></pre>
+
+    <!-- <script>
+      const detailer = document.querySelector('#detalhar')
+
+      detailer.addEventListener('click', (event) => {
+        event.preventDefault()
+        const dataValue = document.querySelector('#form-add').data.value
+        listDetails(dataValue)
+      })
+
+      function appendPG(objeto) {
+        const pre = document.getElementById('postgres')
+        const textContent = document.createTextNode(objeto + '\n')
+        pre.appendChild(textContent)
+      }
+
+      function appendCsv(objeto) {
+        const pre = document.getElementById('csv')
+        const textContent = document.createTextNode(objeto + '\n')
+        pre.appendChild(textContent)
+      }
+
+      const listDetails = async (datetime) => {
+        const respCsv = await fetch(
+          `https://indicium-challenge.s3-sa-east-1.amazonaws.com/csv/${datetime}/order_details.json`
+        )
+        const respPG = await fetch(
+          `https://indicium-challenge.s3-sa-east-1.amazonaws.com/postgres/${datetime}/order_details.json`
+        )
+        if (respCsv.ok && respPG.ok) {
+          appendPG(JSON.stringify(respPG))
+          appendCsv(JSON.stringify(respCsv))
+        }
+        throw new Error('Nesta data não houve pedido.')
+      }
+    </script> -->
+  </body>
+</html>
