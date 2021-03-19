@@ -16,8 +16,7 @@ A seguir apresento os arquivos presentes, a intenção pretendida com eles, e es
   <li> <strong> loader.py</strong></li>
    função: Utiliza as tabelas extraidas do banco de dados original, e carrega os mesmos no serviço s3 da AWS utilizando o Python SDK (boto3);    
   estado: funcionando
-  <li><strong> index.html</strong>
-    Arquivo para geração de um website estatico, onde um usuario escolhe um data dentro do intervalo dos pedidos presente no s3; após este procedimento, o servidor é acionado e retora os arquivos JSON envolvidos.
+  <li><strong> index.html</strong> </li>
+    função Arquivo para geração de um website estatico, onde um usuario escolhe um data dentro do intervalo dos pedidos presente no s3; após este procedimento, o servidor é acionado e retora os arquivos JSON envolvidos.
     estado: ocorrendo erro de autenticação
-  </li>
  </ol>
